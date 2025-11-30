@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+        }
+    
+        .navbar {
+            background-color: antiquewhite;
+            padding: 15px;
+            display: flex;
+            justify-content: flex-start;
+        }
+    
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+    
+        .navbar a:hover {
+            background-color: lightblue;
+        }
+    
+        .content {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
+        }
+    
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            /* more spacing between boxes */
+        }
+    
+        .stat-box {
+            background-color: #f0f0f0;
+            padding: 40px;
+            /* bigger padding */
+            border-radius: 15px;
+            /* slightly rounder corners */
+            width: 300px;
+            /* wider box */
+            text-align: center;
+        }
+    
+        .stat-box h2 {
+            margin: 0;
+            font-size: 3em;
+            /* larger number */
+            color: darkblue;
+        }
+    
+        .stat-box p {
+            margin: 10px 0 0;
+            font-size: 1.5em;
+            /* larger label text */
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align:center;">Welcome {{patient.name}}!</h1>
+<div class="navbar">
+    <a href="{{url_for('appointment_list')}}">Appointments</a>
+    <a href="{{url_for('treatment_list')}}">Treatment</a>
+    <a href="{{url_for('home')}}">Logout</a>
+</div>
+    <div class="content">
+        <div class="stats-container">
+            <div class="stat-box">
+                <p>Appointments📋</p>
+                <h2>{{ total_appointments }}</h2>
+            </div>
+            <div class="stat-box">
+                <p>Treatments 💊</p>
+                <h2>{{ total_treatments }}</h2>
+            </div>
+        </div>
+
+</body>
+</html>

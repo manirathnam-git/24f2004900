@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Doctor</title>
+    <style>
+        form {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+        h2 {
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Edit Treatment Details</h2>
+    <form method="POST">
+        <label for="treatment_id">Treatment ID:</label>
+        <input type="number" name="treatment_id" value="{{ treatment.treatment_id }}" required>
+
+        <label for="appointment_id">Appointment ID:</label>
+        <input type="text" name="appointment_id" value="{{ treatment.appointment_id}}" required>
+
+        <label for="diagnosis">Diagnosis:</label>
+        <input type="text" name="diagnosis" value="{{ treatment.diagnosis }}" required>
+
+        <label for="prescription">Prescription:</label>
+        <input type="text" name="prescription" value="{{ treatment.prescription }}" required>
+
+        <label for="notes">Notes:</label>
+        <input type="text" name="notes" value="{{ treatment.notes }}" required>
+
+        <button type="submit">Update Treatment</button>
+    </form>
+</body>
+
+</html>
