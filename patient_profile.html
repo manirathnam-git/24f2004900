@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Patient Dashboard</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+
+        .navbar {
+            background-color: antiquewhite;
+            padding: 15px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            background-color: lightblue;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card {
+            background-color: #fff;
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: darkblue;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            width: 150px;
+        }
+
+        .stat-box h3 {
+            margin: 0;
+            font-size: 2em;
+            color: darkblue;
+        }
+
+        .stat-box p {
+            margin: 5px 0 0;
+            font-size: 1em;
+            color: #333;
+        }
+
+        table {
+            margin: 30px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        th {
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align:center;">Welcome {{ patients.name}} 🛌</h1>
+
+    <div class="navbar">
+        <a href="{{ url_for('home') }}">Logout</a>
+    </div>
+
+    <div class="content">
+        <div class="card">
+            <h2>Patient Details</h2>
+            <p><strong>Age:</strong> {{ patients.age}}</p>
+            <p><strong>Gender:</strong> {{ patients.gender}}</p>
+            <p><strong>Email:</strong> {{ patients.email }}</p>
+            <p><strong>Phone:</strong> {{ patients.phone_num}}</p>
+            <p><strong>Address:</strong> {{ patients.address}}</p>
+            <p><strong>Doctor ID:</strong> {{ patients.doctor_id}}</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <h3>{{ total_appointments }}</h3>
+                <p>Appointments 📋</p>
+            </div>
+            <div class="stat-box">
+                <h3>{{ total_treatments }}</h3>
+                <p>Treatments 💊</p>
+            </div>
+        </div>
+        <h2>Your Appointments</h2>
+        <table>
+            <tr>
+                <th> Appointment Id</th>
+                <th>Patient Id</th>
+                <th>Doctor Id</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+            </tr>
+            {% for appt in appointments %}
+            <tr>
+                <td>{{ appt.appointment_id}}</td>
+                <td>{{appt.patient_id}}</td>
+                <td>{{ appt.doctor_id}}</td>
+                <td>{{ appt.date}}</td>
+                <td>{{ appt.time}}</td>
+                <td>{{ appt.status}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <h2>Your Treatments</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Appointment</th>
+                <th>Diagnosis</th>
+                <th>Prescription</th>
+                <th>Notes</th>
+            </tr>
+            {% for t in treatments %}
+            <tr>
+                <td>{{ t.treatment_id}}</td>
+                <td>{{ t.appointment_id}}</td>
+                <td>{{ t.diagnosis}}</td>
+                <td>{{ t.prescription}}</td>
+                <td>{{ t.notes}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Appointment</title>
+    <style>
+        button :hover {
+            color: lightblue;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bolder;
+        }
+
+        input,
+        select {
+            width: 100%;
+            margin-top: 5px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="POST">
+        <label for="" name="appointment_id">Appointment Id</label>
+        <input type="number" name="appointment_id" required>
+        <label for="" name="patient_id">Patient Id</label>
+        <input type="number" name="patient_id" required>
+        <label for="">Doctor Id</label>
+        <input type="number" name="doctor_id" required>
+        <label for="" name="date">Date</label>
+        <input type="date" name="date" required>
+        <label for="">Time</label>
+        <input type="time" name="time" required>
+        <label for="" name="status">Status</label>
+        <select name="status" id="">
+            <option value="booked">Booked</option>
+            <option value="not booked">Not Booked</option>
+        </select>
+        <button type="submit">Edit Appointment</button>
+    </form>
+</body>
+
+</html>

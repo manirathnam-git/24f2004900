@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Patient</title>
+    <style>
+        form{
+            width:50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+           
+        }
+        label
+        {
+            display: block;
+            margin-top: auto;
+            font-weight: bolder;
+        }
+        input{
+            width: 100%;
+            margin-top: 5px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 1px;
+        }
+        button :hover
+        {
+            color: lightblue;
+        }
+        button
+        {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Manage Patient</h1>
+    <form action="" method="post">
+        <label name="patient_id">Patient Id</label>
+        <input name="patient_id"type="number">
+        <label name="user_id">User Id</label>
+        <input type="number" name="user_id">
+        <label name="name">Name</label>
+        <input type="text" name="name">
+        <label name="age">Age</label>
+        <input type="number" name="age">
+        <label name="doctor_id">Doctor id</label>
+        <input type="text" name="doctor_id">
+        <label name="gender">Gender</label>
+        <input type="text" name="gender">
+        <label name="email">Email</label>
+        <input type="email" name="email">
+        <label name="address">Address</label>
+        <input type="text" name="address">
+        <label name="phone_num">Phone Number</label>
+        <input type="text" name="phone_num">
+        <button type="submit">Add Patient</button>
+    </form>
+
+</body>
+
+</html>

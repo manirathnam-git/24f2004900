@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Patient</title>
+    <style>
+        form {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+
+        }
+
+        label {
+            display: block;
+            margin-top: auto;
+            font-weight: bolder;
+        }
+
+        input {
+            width: 100%;
+            margin-top: 5px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 1px;
+        }
+
+        button :hover {
+            color: lightblue;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Manage Treatment</h1>
+    <form action="" method="post">
+        <label name="treatment_id">Treatment Id</label>
+        <input name="treatment_id" type="number">
+        <label name="appointment_id">Appointment Id</label>
+        <input type="number" name="appointment_id">
+        <label name="diagnosis">Diagnosis</label>
+        <input type="text" name="diagnosis">
+        <label name="prescription">Prescription</label>
+        <input type="text" name="prescription">
+        <label name="notes">Notes</label>
+        <input type="text" name="notes">
+        <button type="submit">Add Treatment</button>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Patient</title>
+        <style>
+            form{
+                width:50%;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #ddd;
+                background-color: #f9f9f9;
+                border-radius: 8px;
+            }
+            label
+            {
+                display: block;
+                font-weight: bolder;
+                margin-top: 10px;
+            }
+            input
+            {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            button
+            {
+                margin-top: 15px;
+                padding: 10px 20px;
+                background-color: #28a745;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            button:hover
+            {
+                background-color: blue;
+            }
+            h2{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <form  method="POST">
+            <label for="">Patient Id</label>
+            <input type="number" name="patient_id">
+            <label for="">User_id</label>
+            <input type="number" name="user_id">
+            <label for="">Name</label>
+            <input type="text" name="name" id="">
+            <label for="">Age</label>
+            <input type="text" name="age" id="">
+            <label type="number" name=""doctor_id>Doctor id</label>
+            <input type="text" name="doctor_id">
+            <label for="">Gender</label>
+            <input type="text" name="gender">
+            <label for="">Email</label>
+            <input type="email" name="email">
+            <label for="">Phone Number</label>
+            <input type="text" name="phone_num" id="">
+            <label for="">Address</label>
+            <input type="text" name="address">
+            <button type="submit">Update</button>
+        </form>
+    </body>
+</html>

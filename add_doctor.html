@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Doctor</title>
+    <h1>Enter The Details of the Doctor</h1>
+    <style>
+        form{
+            width :50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        label
+        {
+            display: block;
+            margin-top: 10px;
+            font-weight: bolder;
+        }
+        input,select{
+            width:100%;
+            margin-top: 5px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 1px;
+        }
+        button :hover
+        {
+            color: lightblue;
+        }
+        button
+        {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: blue;
+            color:white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <form method="post">
+    <label for="">Doctor id</label><br>
+    <input type="number" name="doctor_id" required><br>
+    <label for="">User id</label><br>
+    <input type="number" name="user_id" required><br>
+    <label for="">Name</label><br>
+    <input type="text" name="name" required><br>
+    <label for="">Specialization</label><br>
+    <input type="text" name="specialization" required><br>
+    <label for="">Email</label><br>
+    <input type="email" name="email" required><br>
+    <label for="">Availability</label><br>
+    <input type="text" name="availability" required><br>
+    <label for="">Status</label><br>
+    <select name="status" id="">
+        <option value="Available">Available</option>
+        <option value="Unavailable">Unavailable</option>
+    </select><br><br>
+    <button type="submit"> ➕Add Doctor</button>
+    </form>
+
+</body>
+
+</html>
